@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-21T06:28:12.775Z</updated>
+  <updated>2018-01-21T08:35:24.532Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何修改hexo的主题内容？</title>
+    <link href="http://yoursite.com/2018/01/21/%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9hexo%E7%9A%84%E4%B8%BB%E9%A2%98%E5%86%85%E5%AE%B9%EF%BC%9F/"/>
+    <id>http://yoursite.com/2018/01/21/如何修改hexo的主题内容？/</id>
+    <published>2018-01-21T08:32:57.000Z</published>
+    <updated>2018-01-21T08:35:24.532Z</updated>
+    
+    <content type="html"><![CDATA[<p>折腾到了现在，虽然成功的将hexo模板下载下来，并部署到GitHub上面了，可是不知道该如何的去修改html中内容，<br>比如是修改一些文字，或者是把页脚的东西改掉，可是不知道应该如何下手？？？烦。。。。。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;折腾到了现在，虽然成功的将hexo模板下载下来，并部署到GitHub上面了，可是不知道该如何的去修改html中内容，&lt;br&gt;比如是修改一些文字，或者是把页脚的东西改掉，可是不知道应该如何下手？？？烦。。。。。。。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="主题" scheme="http://yoursite.com/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

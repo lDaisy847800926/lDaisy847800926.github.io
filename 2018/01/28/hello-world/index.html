@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
+<!-- {% if theme.canvas_nest %}
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %} -->
+
+{% if theme.canvas_nest %}
+<script type="text/javascript"
+color="255,0,0" opacity='0.7' zIndex="-1" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+{% endif %}
+
 <!-- Head tag -->
 <head>
   <meta charset="utf-8">
@@ -250,8 +259,6 @@
   <!-- After footer scripts -->
   <!-- scripts -->
 <script src="/js/app.js"></script>
-
-
 
 
 

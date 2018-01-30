@@ -39,7 +39,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="弹happy"/>
+      <meta property="og:title" content="项目"/>
   
   <!--Open Graph Description-->
   
@@ -47,7 +47,7 @@
   <meta property="og:site_name" content="弹happy"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -68,7 +68,7 @@
 
   <!-- Title -->
   
-  <title>弹happy</title>
+  <title>项目 - 弹happy</title>
 
 
     <link rel="shortcut icon" href="/images/bitbug_favicon.ico">
@@ -189,19 +189,41 @@ color="255,0,0" opacity='0.7' zIndex="-1" count="100" src="//cdn.bootcss.com/can
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            Untitled
+            项目
             
           </h1>
          
         </div>
          <p class="a-posted-on">
-          2018-01-29
+          2018-01-30
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <hr>
-<p>layout: project<br>title: 项目<br>date: 2017-03-10 09:40:04</p>
-<h2 id="type-“project”"><a href="#type-“project”" class="headerlink" title="type: “project”"></a>type: “project”</h2>
+          <h1 id="linux常用操作命令"><a href="#linux常用操作命令" class="headerlink" title="linux常用操作命令"></a>linux常用操作命令</h1><p>tab 补全<br>pwd 当前的工作目录路径</p>
+<p>1、ls   显示目录下的内容<br>ls  -a  当前目录下的所有文件，包括隐藏文件<br>ls  -l 以长格式展示文件的信息<br>ls -h 显示文件的大小<br>ll</p>
+<p>2、通配符</p>
+<ul>
+<li>匹配所有<br>？<br>3、cd<br>cd ~ 切换到当前目录的根目录</li>
+</ul>
+<p>4、输出重定向</p>
+<blockquote>
+<p> 单个文件重定向</p>
+<blockquote>
+<p>多个重定向<br>cat  查看文件的内容<br>cat b.txt c.txt &gt; a.txt   合并两个文件</p>
+</blockquote>
+</blockquote>
+<p>5、查看文件<br>cat 查看文件<br>head 查看文件内容的开头<br>tail  查看文件内容的尾部<br>less  按住enter走一下  敲空格走下一页<br>more  全屏显示<br>wc a.txt  一次显示文件的行数，字节数，文件名信息<br>| 管道<br>echo $PATH 输出内容 查看环境变量<br>clear 清屏</p>
+<p>6、mkdir 创建目录<br>mkdir 创建目录  相对/绝对路径都可以<br>mkdir /a/b/c/d -p 递归创建，没有存在的也闯出来了<br>touch  创建文本</p>
+<p>7、rmdir 删除空目录<br>rmdir  -r  删除非空目录<br>rm 删除普通文件 空的<br>rm -r  删除目录  递归删除<br>rm -ri  i是提醒你是否要删除</p>
+<p>8、复制<br>cp  ./a.txt   test/  将a.txt复制到test目录下<br>cp -r（递归）目录的复制    </p>
+<p>9、剪切<br>mv  剪切文件/剪切目录,移动文件或目录  mv 文件  目标目录<br>mv  a.txt d.txt  将a 重命名为b</p>
+<p>10、ln 建立链家文件   也就是Windows下的快捷方式<br>软链接 ln -s  d.txt d1   d1是d的软连接，源文件删除，软链接失效，源软件链接和源文件不在统一目录，源文件要使用绝对路径<br>硬链接 ln  d.txt d1  源文件删除，硬链接还可以用，硬链接和源文件的大小是一样的</p>
+<p>11、grep  管道<br>ls grep | d  查找带d的<br>find  查找文件<br>find  文件路径  /  -name  根据文字来查找<br>find ./ -name ‘*.sh’ 查找目录下所有的后缀为.sh的文件</p>
+<p>12、解压缩<br>压缩分为两步：打包、压缩<br>tar  打包或拆包文件  tar  -cvf (f是文件名)+打包名.tar<br>tar  解包文件            tar   -xvf  +解包名<br>压缩  gzip  test.tar   test.tar.gz<br>gzip -r test.tar  taet.gz   -r(压缩所有的子目录)</p>
+<p>解压分为两步：解压、拆包<br>gzip -d  test.tar.gz  解压文件<br>tar  -zcvf  test.tar.gz  *  压缩和打包功能<br>tar -zxvf  test.tar.gz   解压<br>zip -r  test 压缩<br>unzip  test.zip  解压</p>
+<p>13、VIM 文本文本编辑器<br>vim三种模式<br>命令行模式  输入命令操作<br>输入模式<br>末行模式</p>
+<p>先进入命令模式——–想要输入命令，必须进入输入模式 按i  进入输入模式————-&gt;返回命令模式 按esc<br>光标中的操作：<br>在输入模式中，按a输入原光标的前面，按 i 就是原光标的后面，按O后面的一行，按S，删除整行，按A</p>
+
         </div>
       </article>
     </div>

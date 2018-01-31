@@ -181,56 +181,180 @@ color="255,0,0" opacity='0.7' zIndex="-1" count="100" src="//cdn.bootcss.com/can
 
 
   <!-- Main Content -->
-  <div class="content-area">
-  <div class="post">
-    <!-- Post Content -->
-    <div class="container">
-      <article>
-        <!-- Title date & tags -->
-        <div class="post-header">
-          <h1 class="entry-title">
-            项目
-            
-          </h1>
-         
-        </div>
-         <p class="a-posted-on">
-          2018-01-30
-          </p>
-        <!-- Post Main Content -->
-        <div class="entry-content">
-          <h1 id="linux常用操作命令"><a href="#linux常用操作命令" class="headerlink" title="linux常用操作命令"></a>linux常用操作命令</h1><p>tab 补全<br>pwd 当前的工作目录路径</p>
-<p>1、ls   显示目录下的内容<br>ls  -a  当前目录下的所有文件，包括隐藏文件<br>ls  -l 以长格式展示文件的信息<br>ls -h 显示文件的大小<br>ll</p>
-<p>2、通配符</p>
-<ul>
-<li>匹配所有<br>？<br>3、cd<br>cd ~ 切换到当前目录的根目录</li>
-</ul>
-<p>4、输出重定向</p>
-<blockquote>
-<p> 单个文件重定向</p>
-<blockquote>
-<p>多个重定向<br>cat  查看文件的内容<br>cat b.txt c.txt &gt; a.txt   合并两个文件</p>
-</blockquote>
-</blockquote>
-<p>5、查看文件<br>cat 查看文件<br>head 查看文件内容的开头<br>tail  查看文件内容的尾部<br>less  按住enter走一下  敲空格走下一页<br>more  全屏显示<br>wc a.txt  一次显示文件的行数，字节数，文件名信息<br>| 管道<br>echo $PATH 输出内容 查看环境变量<br>clear 清屏</p>
-<p>6、mkdir 创建目录<br>mkdir 创建目录  相对/绝对路径都可以<br>mkdir /a/b/c/d -p 递归创建，没有存在的也闯出来了<br>touch  创建文本</p>
-<p>7、rmdir 删除空目录<br>rmdir  -r  删除非空目录<br>rm 删除普通文件 空的<br>rm -r  删除目录  递归删除<br>rm -ri  i是提醒你是否要删除</p>
-<p>8、复制<br>cp  ./a.txt   test/  将a.txt复制到test目录下<br>cp -r（递归）目录的复制    </p>
-<p>9、剪切<br>mv  剪切文件/剪切目录,移动文件或目录  mv 文件  目标目录<br>mv  a.txt d.txt  将a 重命名为b</p>
-<p>10、ln 建立链家文件   也就是Windows下的快捷方式<br>软链接 ln -s  d.txt d1   d1是d的软连接，源文件删除，软链接失效，源软件链接和源文件不在统一目录，源文件要使用绝对路径<br>硬链接 ln  d.txt d1  源文件删除，硬链接还可以用，硬链接和源文件的大小是一样的</p>
-<p>11、grep  管道<br>ls grep | d  查找带d的<br>find  查找文件<br>find  文件路径  /  -name  根据文字来查找<br>find ./ -name ‘*.sh’ 查找目录下所有的后缀为.sh的文件</p>
-<p>12、解压缩<br>压缩分为两步：打包、压缩<br>tar  打包或拆包文件  tar  -cvf (f是文件名)+打包名.tar<br>tar  解包文件            tar   -xvf  +解包名<br>压缩  gzip  test.tar   test.tar.gz<br>gzip -r test.tar  taet.gz   -r(压缩所有的子目录)</p>
-<p>解压分为两步：解压、拆包<br>gzip -d  test.tar.gz  解压文件<br>tar  -zcvf  test.tar.gz  *  压缩和打包功能<br>tar -zxvf  test.tar.gz   解压<br>zip -r  test 压缩<br>unzip  test.zip  解压</p>
-<p>13、VIM 文本文本编辑器<br>vim三种模式<br>命令行模式  输入命令操作<br>输入模式<br>末行模式</p>
-<p>先进入命令模式——–想要输入命令，必须进入输入模式 按i  进入输入模式————-&gt;返回命令模式 按esc<br>光标中的操作：<br>在输入模式中，按a输入原光标的前面，按 i 就是原光标的后面，按O后面的一行，按S，删除整行，按A</p>
+  <style>
+#container {
+    margin: auto;
+    max-width: 1280px;
+    margin-top: 5em;
+    margin-bottom: 60px;
+    animation: cont 0.3s;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 20px 0px 15px 0px;
+    clear: both;
+}
+.about-me .counts, .about-me .profile {
+    border-bottom: 1px solid #eee;
+    margin: 0 0 3%;
+    padding: 0 0 3%;
+    text-align: center;
+}
+.about-me .avatar-450 {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 100%;
+    border: 3px solid #F2F5F7;
+}
+.avatar-450 {
+    width: 30%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 100%;
+}
+.about-me .about-avatar, .about-me .info {
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing: 0;
+    margin-top: -15px;
+}
+.about-me .info {
+    width: 30%;
+    padding-left: 15px;
+}
+.about-me .info h1 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #333;
+    word-break: break-all;
+}
+.about-me .info h1, .about-me p {
+    color: rgba(0,0,0,.6);
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.repo-list{
+    list-style: none;
+}
+li.repo{
+    width: 32%;
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0.3%;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.25);
+    transition: all .3s linear;
+}
+li.repo:hover{
+    box-shadow: 0 0 18px 0 rgba(0,0,0,.5);
+}
+li.repo h2 {
+    margin-top: 20px;
+    padding: 10px 20px 5px;
+    color: #CE2323;
+}
+li.repo p.commit {
+    padding: 0 20px 20px;
+    font-size: 0.6em;
+}
+li p.fot{
+    margin: 0 20px 15px;
+}
 
+li span.pic{
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+li span.language{
+    padding-left: 20px;
+    color: #767676;
+}
+@media all and (max-width:1440px){
+    #container{max-width:1100px}
+    .post-random .photo {width: 23%;}
+}
+@media (max-width: 999px) {
+    #container {
+        width: 95%;
+        margin-top: 2em;
+    }
+}
+@media screen and (max-width: 960px) {
+    li.repo {
+        display: block;
+        width: 85%;
+        margin: 10px auto;
+    }
+}
+@media (max-width: 720px) {
+    #container {
+        box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 0px 0px, rgba(0, 0, 0, 0.298039) 0px 0px 0px 0px;
+        width: 94%;
+        margin: 10px auto auto -3px;
+        padding: 15px;
+
+    }
+}
+
+</style>
+<div id="container">
+    <div class="about-me about_mob" style="display: inherit;">
+        <div class="profile">
+            <img alt="" src="/images/money.gif"  class="avatar avatar-450 photo" height="450" width="450">
+            <div class="info aboutinfo">
+                <h1><span>弹happy</span>的代码库</h1>
+                <p>永远相信</p>
+                <p>美好的事情即将发生</p>
+            </div>
         </div>
-      </article>
     </div>
-    <!-- Pre or Next -->
-    
-　　　　
-  </div>
+    <div class="codeBox">
+        <ol class="repo-list">
+		
+		  <li class="repo">
+                    <a href="https://github.com/lDaisy847800926/BaiduBaiKe-Spider" target="_blank">
+                    	<div class="content">
+                          <h2 class="title">百度百科爬虫</h2>
+                          <p class="commit">爬取百度百科</p>
+                          <p class="fot">
+                            <span class="pic" style="background-color: #f1e05a;"></span><span class="language">python</span>
+                          </p>
+                        </div>
+                    </a>
+                  </li>
+                
+		  <li class="repo">
+                    <a href="https://github.com/lDaisy847800926/wechat_jump_game" target="_blank">
+                    	<div class="content">
+                          <h2 class="title">微信跳一跳</h2>
+                          <p class="commit">python 微信《跳一跳》辅助</p>
+                          <p class="fot">
+                            <span class="pic" style="background-color: #f1e05a;"></span><span class="language">python</span>
+                          </p>
+                        </div>
+                    </a>
+                  </li>
+                
+		  <li class="repo">
+                    <a href="https://github.com/lDaisy847800926/recruitment" target="_blank">
+                    	<div class="content">
+                          <h2 class="title">python招聘职位分析</h2>
+                          <p class="commit">抓取招聘网站</p>
+                          <p class="fot">
+                            <span class="pic" style="background-color: #f1e05a;"></span><span class="language">python</span>
+                          </p>
+                        </div>
+                    </a>
+                  </li>
+                
+
+        </ol>
+    </div>
 </div>
 
 

@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<!-- {% if theme.canvas_nest %}
-<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-{% endif %} -->
-
-<!-- 小火箭回到顶部 -->
 <script src="http://common.cnblogs.com/script/jquery.js?v=1.7.min" type="text/javascript"></script>
 
 <style type="text/css">
@@ -127,6 +122,8 @@ $(function() {
 
 
 
+
+
 <!-- Head tag -->
 <head>
   <meta charset="utf-8">
@@ -212,6 +209,11 @@ color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/can
 
 
 <body>
+     <!-- 火箭 -->
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
 
   <!-- Nav -->
   <header class="site-header">
@@ -744,11 +746,6 @@ color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/can
 
 
 
-  <!-- 火箭 -->
-<div style="display: none;" id="rocket-to-top">
-    <div style="opacity:0;display: block;" class="level-2"></div>
-    <div class="level-3"></div>
-</div>
 
 
 </body>

@@ -323,7 +323,71 @@ color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/can
           </p>
         <!-- Post Main Content -->
         <div class="entry-content">
-          
+          <h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>在自己认为合适的地方创建一个文件夹，这里我以G：/hexo 为例子讲解，首先在G盘目录下创建Hexo文件夹，并在命令行的窗口进入到该目录<br><img src="https://i.imgur.com/Ojff7ta.png" alt=""><br>在命令行中输入：</p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p>安装需要一些时间，然后你将会看到一个WAN,不用管，这不会印象你的正常使用，然后输入：</p>
+<pre><code>npm install hexo --save
+</code></pre><p><img src="https://i.imgur.com/nJYDJjX.png" alt=""></p>
+<p>来看一看Hexo是不是已经安装好了。 在命令行中输入：</p>
+<pre><code>hexo     -v
+</code></pre><p>如果你看到了如图文字，则说明已经安装成功了<br><img src="https://i.imgur.com/t28xLMS.png" alt=""></p>
+<h1 id="hexo的相关配置"><a href="#hexo的相关配置" class="headerlink" title="hexo的相关配置"></a>hexo的相关配置</h1><p><strong>初始化Hexo</strong></p>
+<p>接着上面的操作，输入：</p>
+<pre><code>hexo   init
+</code></pre><p>然后输入：</p>
+<pre><code>npm install
+</code></pre><p>之后npm将会自动安装你需要的组件，只需要等待npm操作即可。</p>
+<p><strong>首次体验Hexo</strong><br>继续操作，同样是在命令行中，输入：</p>
+<pre><code>hexo g
+</code></pre><p>然后输入：</p>
+<pre><code>hexo s
+</code></pre><p>然后会提示：</p>
+<p><img src="https://i.imgur.com/OOT8gRC.png" alt=""></p>
+<p>在浏览器中打开<a href="http://localhost:4000/，你将会看到：" target="_blank" rel="noopener">http://localhost:4000/，你将会看到：</a><br><img src="https://i.imgur.com/iDKM82C.jpg" alt=""></p>
+<p>到目前为止，Hexo在本地的配置已经全都结束了。</p>
+<hr>
+<h1 id="怎样将Hexo与github-page-联系起来"><a href="#怎样将Hexo与github-page-联系起来" class="headerlink" title="怎样将Hexo与github page 联系起来"></a>怎样将Hexo与github page 联系起来</h1><p>大概分为以下:</p>
+<ul>
+<li><p>配置git个人信息</p>
+</li>
+<li><p>配置Deployment</p>
+</li>
+</ul>
+<h2 id="配置Git个人信息"><a href="#配置Git个人信息" class="headerlink" title="配置Git个人信息"></a>配置Git个人信息</h2><p>1、设置Git的user name和email：(如果是第一次的话)</p>
+<pre><code>git config --global user.name &quot;lDaisy847800926&quot;
+git config --global user.email &quot;daisy847800926@163.com&quot;
+</code></pre><p>2、生成密钥</p>
+<p>输入cd ~/.ssh，检查是否由.ssh的文件夹<br><img src="https://i.imgur.com/DN3YaIU.png" alt=""></p>
+<pre><code>ssh-keygen -t rsa -C &quot;daisy847800926@163.com&quot;
+</code></pre><p> 输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent</p>
+<p>再输入ssh-add ~/.ssh/id_rsa，添加生成的SSH key到ssh-agent</p>
+<p> 登录Github，点击头像下的settings，添加ssh</p>
+<p>新建一个new ssh key，将id_rsa.pub文件里的内容复制上去</p>
+<p>输入ssh -T git@github.com，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br><img src="https://i.imgur.com/BkNFWX8.png" alt=""></p>
+<p><img src="https://i.imgur.com/WWtPfau.png" alt=""></p>
+<h2 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h2><p>同样在_config.yml文件中(初始化后hexo中的文件)，找到Deployment，repo值是你在github项目里的ssh（右下角）<br>然后按照如下修改：</p>
+<pre><code>deploy:
+  type: git
+  repo: git@github.com:yourname/yourname.github.io.git
+  branch: master
+</code></pre><p>比如我的仓库的地址是git@github.com:lDaisy847800926/lDaisy847800926.github.io.git，所以配置如下</p>
+<pre><code>deploy:
+  type:  git
+  repo:  git@github.com:lDaisy847800926/lDaisy847800926.github.io.git
+  branch: master
+</code></pre><h1 id="写博客、发布文章"><a href="#写博客、发布文章" class="headerlink" title="写博客、发布文章"></a>写博客、发布文章</h1><p>新建一篇博客，执行下面的命令：</p>
+<pre><code>hexo new post &quot;article title&quot;
+</code></pre><p><img src="https://i.imgur.com/Pr0k6wO.png" alt=""></p>
+<p>这时候在我的 电脑的目录下 G:\hexo\source\ _posts 将会看到 article title.md 文件<br><img src="https://i.imgur.com/xiPbkxE.png" alt=""></p>
+<p>需要提前安装一个扩展：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>然后用MarDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p>
+<pre><code>hexo g   // 生成
+hexo d   // 部署
+</code></pre><p>当然你也可以执行下面的命令，相当于上面两条命令的效果</p>
+<pre><code>hexo d -g    #在部署前先生成
+</code></pre><p><img src="https://i.imgur.com/PjhpETT.png" alt=""></p>
+<h2 id="hexo-安装和配置完成"><a href="#hexo-安装和配置完成" class="headerlink" title="hexo 安装和配置完成"></a>hexo 安装和配置完成</h2>
         </div>
       </article>
     </div>
@@ -333,7 +397,7 @@ color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/can
            <ul class="pager">
     	     
       	     <li class="previous">
-              <a href="/2018/01/30/阿里云Ubuntu上软件的安装和卸载/" rel="prev">下一篇</a>
+              <a href="/2017/07/22/手把手教小白用-hexo-Github-搭建属于自己的博客（下）/" rel="prev">下一篇</a>
              </li>
            
            

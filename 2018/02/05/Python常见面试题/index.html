@@ -1,0 +1,505 @@
+
+<html lang="zh-CN">
+
+<script src="http://common.cnblogs.com/script/jquery.js?v=1.7.min" type="text/javascript"></script>
+
+<style type="text/css">
+
+body{height:3000px;}
+
+/*回到顶部*/
+#rocket-to-top div {
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 149px;
+}
+#rocket-to-top .level-2 {
+    background: url("http://images.cnblogs.com/cnblogs_com/mq0036/508398/o_rocket_button_up.png") no-repeat scroll -149px 0 transparent;
+    display: none;
+    height: 250px;
+    opacity: 0;
+    z-index: 1;
+}
+#rocket-to-top .level-3 {
+    background: none repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 150px;
+    z-index: 2;
+}
+#rocket-to-top {
+    background: url("http://images.cnblogs.com/cnblogs_com/mq0036/508398/o_rocket_button_up.png") no-repeat scroll 0 0 transparent;
+    cursor: default;
+    display: block;
+    height: 250px;
+    margin: -125px 0 0;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 80%;
+    width: 149px;
+    z-index: 11;
+}
+
+
+    
+</style>
+
+
+<script type="text/javascript">
+
+// jQuery火箭图标返回顶部代码
+
+$(function() {
+    var e = $("#rocket-to-top"),
+    t = $(document).scrollTop(),
+    n,
+    r,
+    i = !0;
+    $(window).scroll(function() {
+        var t = $(document).scrollTop();
+        t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+            marginTop: "-1000px"
+        },
+        "normal",
+        function() {
+            e.css({
+                "margin-top": "-125px",
+                display: "none"
+            }),
+            i = !0
+        })) : e.fadeIn("slow")
+    }),
+    e.hover(function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 1
+        })
+    },
+    function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 0
+        })
+    }),
+    $(".level-3").click(function() {
+        function t() {
+            var t = e.css("background-position");
+            if (e.css("display") == "none" || i == 0) {
+                clearInterval(n),
+                e.css("background-position", "0px 0px");
+                return
+            }
+            switch (t){
+            case "0px 0px":
+                e.css("background-position", "-298px 0px");
+                break;
+            case "-298px 0px":
+                e.css("background-position", "-447px 0px");
+                break;
+            case "-447px 0px":
+                e.css("background-position", "-596px 0px");
+                break;
+            case "-596px 0px":
+                e.css("background-position", "-745px 0px");
+                break;
+            case "-745px 0px":
+                e.css("background-position", "-298px 0px");
+            }
+        }
+        if (!i) return;
+        n = setInterval(t, 50),
+        $("html,body").animate({scrollTop: 0},"slow");
+    });
+});
+
+</script>
+
+
+
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+   <style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+  </style>
+
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Daisy">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Python100道常见面试题"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="弹happy"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+
+
+  <!-- Title -->
+  
+  <title>Python100道常见面试题 - 弹happy</title>
+
+
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom CSS/Sass -->
+    <link rel="stylesheet" href="/css/style.css"> 
+
+ 
+
+
+</head>
+
+<a href="https://github.com/lDaisy847800926" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top:70; border: 0; right:0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+<!-- {% if theme.canvas_nest %} -->
+<script type="text/javascript"
+color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!-- {% endif %} -->
+
+
+
+
+
+
+
+<body>
+
+
+
+  
+
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/images/money.gif" alt="弹happy" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>弹happy</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                个人简历
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Python100道常见面试题
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-02-05
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p><img src="https://i.imgur.com/taua5nb.jpg" width="600" height="347"><br><a id="more"></a></p>
+<h1 id="Python笔试题"><a href="#Python笔试题" class="headerlink" title="Python笔试题"></a>Python笔试题</h1><p>1.python中的pass语句的作用是什么？</p>
+<p>2.dict中的items()方法与iteritems()方法的不同</p>
+<p>3.写出尽可能的str对象的方法，并解释其作用</p>
+<p>4.生成一个指定长度的斐波那契数列</p>
+<p>5.说明os ,sys模块不同，并列举常用的模块方法？</p>
+<p>6.什么事lambda函数？它有什么好处？</p>
+<p>7.输入三个整数x ,y ,z ，请把这三个数由小到大输出</p>
+<p>8.python实现冒泡排序</p>
+<p>9.有两个升序排列的list A 和B ，尽可能高效的方法将这个两个list合并为一个新的升序排列的list C</p>
+<p>10.有一个list，其中的元素无重复，先由大到小而后由小到大，求出其中的最小元素，要求时间复杂度低于O（n）</p>
+<p>11.请将十进制整数10240转换成十六进制整数</p>
+<p>12.给定一个长为N的，值为整数的数组int_array(如果不方便使用数组，可以用链表代替)写一段程序，在O（n）时间内找出int_array中的第二大的整数。可以使用任意程序设计语言实现。<br>说明：如果最大的整数在int_array中出现了不止一次，则最大的整数和第二大的整数相等。<br>样例数据一：<br>输入：[1,2,3,4,5]<br>输出：4<br>样例数据二：<br>输入:[5,5,4,4,3]<br>输出：5</p>
+<p>13.编写个shell脚本将/SBIDATA目录下大雨10K的文件转移到/SBIBAEODI目录下，按照辈分的日期保存（请使用shell编写）</p>
+<p>bin/bash</p>
+<p>programm:</p>
+<p>14.写一个算法，将字符串列表[“aycc”,”kh”,”llc”,”u”,”l”]通关算法处理为[<br>“y”,’k’,’c’,’u’,’l’],对调字符列表中的字符位置（’y’与’l’对调，’k’与’u’对调），并拼接字符列表中的字符，输出字符串，‘LUCKY’（python编写）</p>
+<p>15.请写出一段python代码实现删除一个list里面的重复元素</p>
+<p>16.请实现一个实现打印当前时间的装饰器</p>
+<p>17.请简述跨域问题，以及服务器针对跨域请求需要做什么处理</p>
+<p>18.python是如何进行内存管理的</p>
+<p>19.python里面如何实现tuple和list的转换</p>
+<p>20.介绍一下except的用法和作用？</p>
+<p>21.介绍一下python下range()函数的用法？</p>
+<p>22.如何用python来进行查询和替换一个文本字符串？</p>
+<p>23.python里面的match() 和search()的区别？</p>
+<p>24.运用python匹配HTML tag的时候，&lt;.<em>&gt;和&lt;.</em>?&gt;有什么区别？？</p>
+<p>25.python里面如何生成随机数？</p>
+<p>26.有没有一个工具可以帮助查找python的bug和进行静代码分析？</p>
+<p>27.如何在一个function里面设置一个全局的变量？</p>
+<p>28.单引号，双引号，三引号的区别</p>
+<p>29.请自己实现一个copy函数（不能调用python的copy函数）</p>
+<p>30.一行代码实现对列表a中的偶数位置的元素进行加3后求和</p>
+<p>31.随机生成100个数（0&lt;n&lt;=100），如何计算得出每个数字的重复次数。输入int a [100]={1,12,53,…..}</p>
+<p>32.什么是GIL？</p>
+<p>33.list=[-2，1，3，-6]如何实现以绝对值大小从小到大将list中内容排序</p>
+<p>34.简述python的is和==的区别</p>
+<p>35.简述read，readline和Readlines的区别</p>
+<p>36.说明创建字典的至少2种方法</p>
+<p>37.<em>args ,*</em>kwargs的作用是什么？如何使用？</p>
+<p>38.python中的变量作用域（变量查找顺序）</p>
+<p>39.数组和元组之间的区别是什么？</p>
+<p>40.python都有哪些自带的数据结构？</p>
+<p>41.xrange 和range的区别是什么？</p>
+<p>42.如何在python中拷贝一个对象？</p>
+<p>43.简述python的优缺点？</p>
+<p>44.写一个程序，用递归的方法计算n!</p>
+<p>45.TCP/IP协议中各协议所在层以及他们之间的关系</p>
+<p>46.有序列表如[1,3,5,7,9]，请用二分查找返回元素所在的位置</p>
+<p>47.用列表生成器1到100的偶数列表，并且a[50:100]返回什么？</p>
+<p>48.将字符串倒叙，如a=’abcdefg’变成’gfedcba’</p>
+<p>49.用最少行数计算某字符串（有只有数据和空格）中偶数的和，a=’12 21 23 22 5 67’</p>
+<p>50.一般怎么优化响应慢的接口？</p>
+<p>51.针对接口设计，有哪些安全设计？</p>
+<p>52.简述爬虫的基本工作原理，目前主要的网站结构以及设计对各类结构网站的爬取方法</p>
+<p>53.请画出scrapy爬虫结构图，并对其进行解释</p>
+<p>54，什么是爬取深度？什么是广度优先策略，什么是深度优先策略？scrapy如何控制爬取深度（在哪里设置，其核心的控制代码在哪里）</p>
+<p>55.scrapy中爬取列表的去重机制是什么？在代码中如何实现？</p>
+<p>56.是否使用过redis，简述redis中有哪些数据结构，并说明基本用途（至少3种）</p>
+<p>57.爬虫程序对于服务器的要求主要在哪些方面？</p>
+<p>58.在web服务中，想要显示只允许某一个ip访问，应该怎么实现？</p>
+<p>59.写程序把一个单向链表顺序倒过来。（尽可能写出更多的实现方法，标出所写方法的空间和时间复杂度）</p>
+<p>60.有一个长度为n的数组a,里面元素都是整数，现有一个整数B，写程序判断数组a中是否有两个元素的和等于B。（尽可能写出更多的实现方法，标出所写方法的空间和时间复杂度）</p>
+<p>61.什么是缓存，在web服务中，缓存有什么作用，什么情况下要使用缓存，缓存分为几种？</p>
+<p>62.什么事负载均衡，负载均衡有什么作用，有哪些负载均衡算法？</p>
+<p>63.简述对RESTful  API设计规范的理解</p>
+<p>64.简述HTTP缓存机制</p>
+<p>65.如何实现一个可供with的语句使用的上下文管理对象</p>
+<p>66.简述python内置实现的一些设计模式</p>
+<pre><code>答：解释器模式，适配器模式，桥接模式，
+</code></pre><p>67.简述python垃圾回收机制及如何解决循环引用</p>
+<p>68.简述什么样的情况下会出发UnicodeDecodeError</p>
+<p>69.异常捕捉中except分支中raise e 改为 raise 会产生哪些变化？</p>
+<p>70.给出3个你经常访问的技术网站或博客</p>
+<p>71.简述标准库中，functools.wraps的作用</p>
+<p>72.简述标准库中，functools.partial的实现思路</p>
+<p>73.写出一段代码实现单例模式</p>
+<p>74.用yield写出一个生成器</p>
+<p>75.@classmethod ,@staticmethod ,@property都是什么意思</p>
+<p>76.解释一下Gevent和threading/multiprocessing的关系</p>
+<p>77.请解释一下cookie和session的关系，以及xsrf的攻击和防范方法</p>
+<p>78.函数、类方法定义中如何实现可选参数、可选关键字参数</p>
+<p>79.解释classmethod和staticmethod的区别</p>
+<p>80.写一段程序，包含迭代器和生成器的使用</p>
+<p>81.如何使用匿名函数</p>
+<p>82.如何使用标准库collections中的deque?</p>
+<p>83.标准库中的copy中的copy和deepcopy的区别</p>
+<p>84.什么是装饰器，如何使用装饰器？</p>
+<p>85.解释with关键字的用法</p>
+<p>86.参数传递使用的是传递引用还是传递值？为什么？</p>
+<p>87.在类的方法定义中，‘self’是怎样的一个参数</p>
+<p>88.进程和线程的区别是什么？</p>
+<p>89.对list进行切片的用法</p>
+<p>90.用两种方式按行读取一个csv文件</p>
+<p>91.简述数据库的锁机制</p>
+<p>92.mysql有几种存储引擎，特点是什么？</p>
+<p>93.写一个函数，能够遍历一个文件夹下的所有文件和子文件夹</p>
+<p>94.python多线程与多进程的区别</p>
+<p>95.python是如何进行类型转换的？</p>
+<p>96.如何用python来发送邮件</p>
+<p>97.python中单下划线和双下划线是什么意思？</p>
+<p>98.urllib和urllib2的区别</p>
+<p>99.get和post区别</p>
+<p>100.python网络爬虫所用到的网络数据包和解析数据包有哪些？</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+           
+              <li class="next">
+              <a href="/2018/02/01/Git详细使用手册/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>弹happy &copy; 2017</span>
+    
+    
+      <span class="split">|</span>
+      <span>IT媛的技术小屋</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+
+
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+
+
+</body>
+
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+
+

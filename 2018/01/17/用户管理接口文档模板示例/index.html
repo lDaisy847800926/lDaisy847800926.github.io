@@ -1,0 +1,1346 @@
+
+<html lang="zh-CN">
+
+<script src="http://common.cnblogs.com/script/jquery.js?v=1.7.min" type="text/javascript"></script>
+
+<style type="text/css">
+
+body{height:3000px;}
+
+/*回到顶部*/
+#rocket-to-top div {
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 149px;
+}
+#rocket-to-top .level-2 {
+    background: url("http://images.cnblogs.com/cnblogs_com/mq0036/508398/o_rocket_button_up.png") no-repeat scroll -149px 0 transparent;
+    display: none;
+    height: 250px;
+    opacity: 0;
+    z-index: 1;
+}
+#rocket-to-top .level-3 {
+    background: none repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: block;
+    height: 150px;
+    z-index: 2;
+}
+#rocket-to-top {
+    background: url("http://images.cnblogs.com/cnblogs_com/mq0036/508398/o_rocket_button_up.png") no-repeat scroll 0 0 transparent;
+    cursor: default;
+    display: block;
+    height: 250px;
+    margin: -125px 0 0;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    right: 0;
+    top: 80%;
+    width: 149px;
+    z-index: 11;
+}
+
+
+    
+</style>
+
+
+<script type="text/javascript">
+
+// jQuery火箭图标返回顶部代码
+
+$(function() {
+    var e = $("#rocket-to-top"),
+    t = $(document).scrollTop(),
+    n,
+    r,
+    i = !0;
+    $(window).scroll(function() {
+        var t = $(document).scrollTop();
+        t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+            marginTop: "-1000px"
+        },
+        "normal",
+        function() {
+            e.css({
+                "margin-top": "-125px",
+                display: "none"
+            }),
+            i = !0
+        })) : e.fadeIn("slow")
+    }),
+    e.hover(function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 1
+        })
+    },
+    function() {
+        $(".level-2").stop(!0).animate({
+            opacity: 0
+        })
+    }),
+    $(".level-3").click(function() {
+        function t() {
+            var t = e.css("background-position");
+            if (e.css("display") == "none" || i == 0) {
+                clearInterval(n),
+                e.css("background-position", "0px 0px");
+                return
+            }
+            switch (t){
+            case "0px 0px":
+                e.css("background-position", "-298px 0px");
+                break;
+            case "-298px 0px":
+                e.css("background-position", "-447px 0px");
+                break;
+            case "-447px 0px":
+                e.css("background-position", "-596px 0px");
+                break;
+            case "-596px 0px":
+                e.css("background-position", "-745px 0px");
+                break;
+            case "-745px 0px":
+                e.css("background-position", "-298px 0px");
+            }
+        }
+        if (!i) return;
+        n = setInterval(t, 50),
+        $("html,body").animate({scrollTop: 0},"slow");
+    });
+});
+
+</script>
+
+
+
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+   <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+   <style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+  </style>
+
+
+  <!--Description-->
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="Daisy">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="用户管理接口文档模板示例"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="弹happy"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+
+
+  <!-- Title -->
+  
+  <title>用户管理接口文档模板示例 - 弹happy</title>
+
+
+    <link rel="shortcut icon" href="/images/bitbug_favicon.ico">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom CSS/Sass -->
+    <link rel="stylesheet" href="/css/style.css"> 
+
+ 
+
+
+</head>
+
+<a href="https://github.com/lDaisy847800926" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top:70; border: 0; right:0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+
+<!-- {% if theme.canvas_nest %} -->
+<script type="text/javascript"
+color="255,0,0" opacity='0.8' zIndex="-1" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<!-- {% endif %} -->
+
+
+
+
+
+
+
+<body>
+
+
+
+  
+
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="/images/money.gif" alt="弹happy" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>弹happy</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                个人简历
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            用户管理接口文档模板示例
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2018-01-17
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h1 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h1><h2 id="接口概述"><a href="#接口概述" class="headerlink" title="接口概述"></a>接口概述</h2><p><strong>概述：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">所属模块</th>
+<th style="text-align:left">所属构件包</th>
+<th style="text-align:left">Controller类</th>
+<th>Url路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">系统管理</td>
+<td style="text-align:left">com.nbcb.crm.galaxy</td>
+<td style="text-align:left">com.nbcb.galaxy.controller.UserController</td>
+<td>com.nbcb.galsxy.user</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>接口清单</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">接口名称</th>
+<th style="text-align:left">说明</th>
+<th>编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">queryUserPage</td>
+<td style="text-align:left">获取用户列表</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">addUser</td>
+<td style="text-align:left">添加用户</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:left">queryUserByOrg</td>
+<td style="text-align:left">根据机构查询用户</td>
+<td>3</td>
+</tr>
+<tr>
+<td style="text-align:left">updateUser</td>
+<td style="text-align:left">更新用户</td>
+<td>4</td>
+</tr>
+<tr>
+<td style="text-align:left">selectHisPage</td>
+<td style="text-align:left">编辑历史查询</td>
+<td>5</td>
+</tr>
+<tr>
+<td style="text-align:left">lockUsers</td>
+<td style="text-align:left">锁定用户</td>
+<td>6</td>
+</tr>
+<tr>
+<td style="text-align:left">unlockUsers</td>
+<td style="text-align:left">解锁用户</td>
+<td>7</td>
+</tr>
+<tr>
+<td style="text-align:left">resetPwd</td>
+<td style="text-align:left">密码重置</td>
+<td>8</td>
+</tr>
+<tr>
+<td style="text-align:left">delUser</td>
+<td style="text-align:left">删除用户</td>
+<td>9</td>
+</tr>
+<tr>
+<td style="text-align:left">recoveryUser</td>
+<td style="text-align:left">恢复用户</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分层及对象模型定义"><a href="#分层及对象模型定义" class="headerlink" title="分层及对象模型定义"></a>分层及对象模型定义</h2><p> <strong>逻辑分层</strong> </p>
+<ul>
+<li>控制层controller ↓</li>
+<li>服务层service</li>
+<li>Dao层</li>
+<li>model层</li>
+</ul>
+<h2 id="Model或参数对象定义"><a href="#Model或参数对象定义" class="headerlink" title="Model或参数对象定义"></a>Model或参数对象定义</h2><ul>
+<li><h3 id="Page-分页信息"><a href="#Page-分页信息" class="headerlink" title="Page  分页信息"></a>Page  分页信息</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th>中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h3 id="GFUser-用户信息"><a href="#GFUser-用户信息" class="headerlink" title="GFUser  用户信息"></a>GFUser  用户信息</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th>中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h3 id="GFUserExplnfo-用户信息拓展信息（继承GFUser）"><a href="#GFUserExplnfo-用户信息拓展信息（继承GFUser）" class="headerlink" title="GFUserExplnfo  用户信息拓展信息（继承GFUser）"></a>GFUserExplnfo  用户信息拓展信息（继承GFUser）</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th>中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h3 id="GFPosition-职位信息"><a href="#GFPosition-职位信息" class="headerlink" title="GFPosition  职位信息"></a>GFPosition  职位信息</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th>中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+<tr>
+<td style="text-align:left">pageIndex</td>
+<td style="text-align:left">int</td>
+<td>页索引号（从0开始）</td>
+</tr>
+<tr>
+<td style="text-align:left">pageSize</td>
+<td style="text-align:left">int</td>
+<td>页大小</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="接口详细设计"><a href="#接口详细设计" class="headerlink" title="接口详细设计"></a>接口详细设计</h2><ul>
+<li><h3 id="查询用户-queryUserPage"><a href="#查询用户-queryUserPage" class="headerlink" title="查询用户  queryUserPage"></a>查询用户  queryUserPage</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">GFUserExplnfo</td>
+<td style="text-align:left">查询参数</td>
+<td>否</td>
+<td>前端输入</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">GFUserExplnfo</td>
+<td style="text-align:left">查询参数</td>
+<td>否</td>
+<td>前端输入</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">GFUserExplnfo</td>
+<td style="text-align:left">查询参数</td>
+<td>否</td>
+<td>前端输入</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">GFUserExplnfo</td>
+<td style="text-align:left">查询参数</td>
+<td>否</td>
+<td>前端输入</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>密码</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">PageData</td>
+<td style="text-align:left">用户列表</td>
+</tr>
+</tbody>
+</table>
+<p><strong>查询逻辑：</strong> </p>
+<pre><code>- 查询用户
+</code></pre><ul>
+<li><h3 id="新增-addUser"><a href="#新增-addUser" class="headerlink" title="新增 addUser"></a>新增 addUser</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<pre><code>- 判断用户工号是否存在
+- 添加用户
+- 增加用户更新历史
+- 增加职位信息
+</code></pre><ul>
+<li><h3 id="根据机构查询用户-queryUserByOrg"><a href="#根据机构查询用户-queryUserByOrg" class="headerlink" title="根据机构查询用户 queryUserByOrg"></a>根据机构查询用户 queryUserByOrg</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<ul>
+<li><h3 id="编辑用户-updateUser"><a href="#编辑用户-updateUser" class="headerlink" title="编辑用户 updateUser"></a>编辑用户 updateUser</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<ul>
+<li><h3 id="查询用户更新记录-selectHisPage"><a href="#查询用户更新记录-selectHisPage" class="headerlink" title="查询用户更新记录 selectHisPage"></a>查询用户更新记录 selectHisPage</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<ul>
+<li><h3 id="锁定用户-lockUsers"><a href="#锁定用户-lockUsers" class="headerlink" title="锁定用户  lockUsers"></a>锁定用户  lockUsers</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<ul>
+<li><h3 id="解锁用户-unlockUsers"><a href="#解锁用户-unlockUsers" class="headerlink" title="解锁用户 unlockUsers"></a>解锁用户 unlockUsers</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<ul>
+<li><h3 id="删除用户-delUser"><a href="#删除用户-delUser" class="headerlink" title="删除用户  delUser"></a>删除用户  delUser</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<pre><code>- 逻辑删除用户，更新变更记录
+- HR同步的不能删除
+</code></pre><ul>
+<li><h3 id="恢复用户-recoveryUser"><a href="#恢复用户-recoveryUser" class="headerlink" title="恢复用户  recoveryUser"></a>恢复用户  recoveryUser</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<pre><code>- 逻辑删除用户，更新变更记录
+</code></pre><ul>
+<li><h3 id="密码重置-resetPwd"><a href="#密码重置-resetPwd" class="headerlink" title="密码重置  resetPwd"></a>密码重置  resetPwd</h3></li>
+</ul>
+<p><strong>输入参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+<th>是否必填</th>
+<th>来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user</td>
+<td style="text-align:left">GFUser</td>
+<td style="text-align:left">用户</td>
+<td>是</td>
+<td>前端输入</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>输出参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段id</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">中文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">状态</td>
+</tr>
+</tbody>
+</table>
+<p><strong>处理逻辑：</strong> </p>
+<pre><code>- 循环重置用户密码，更新变更记录
+</code></pre>
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2018/01/30/阿里云Ubuntu上软件的安装和卸载/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/08/22/Python常见面试题/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>弹happy &copy; 2017</span>
+    
+    
+      <span class="split">|</span>
+      <span>IT媛的技术小屋</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+
+
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+<div style="display: none;" id="rocket-to-top">
+    <div style="opacity:0;display: block;" class="level-2"></div>
+    <div class="level-3"></div>
+</div>
+
+
+
+</body>
+
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+
+
